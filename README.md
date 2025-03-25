@@ -1,6 +1,6 @@
 # Personal Portfolio Website
 
-A modern, responsive portfolio website built with Next.js and Tailwind CSS. This portfolio showcases your projects, skills, and experience in a clean and professional manner.
+My portfolio website built with Next.js and Tailwind CSS. This portfolio showcases my projects, skills, and experience in a clean and professional manner.
 
 ## Features
 
@@ -11,106 +11,51 @@ A modern, responsive portfolio website built with Next.js and Tailwind CSS. This
 - Downloadable resume section
 - About me section with skills and experience
 - Social media integration
+- Dark/Light mode support with next-themes
+- Smooth animations with Framer Motion
+- TypeScript support for better type safety
 
 ## Tech Stack
 
 - Next.js 14
 - React 18
+- TypeScript
 - Tailwind CSS
 - EmailJS for contact form
 - Framer Motion for animations
+- next-themes for dark/light mode
+- React Icons for iconography
+- clsx and tailwind-merge for conditional styling
 
-## Getting Started
+## Project Structure
 
-1. Clone the repository:
+```
+src/
+├── app/           # Next.js app router pages
+├── components/    # Reusable React components
+├── data/         # Static data and content
+├── lib/          # Library configurations
+├── styles/       # Global styles and Tailwind config
+└── utils/        # Utility functions and helpers
+```
 
-   ```bash
-   git clone https://github.com/yourusername/portfolio.git
-   cd portfolio
-   ```
+## Overview
 
-2. Install dependencies:
+This portfolio website is built using my aforementioned tech stack. It features a clean, minimalist design that focuses on showcasing content effectively. The site is fully responsive and includes smooth animations for an enhanced user experience.
 
-   ```bash
-   npm install
-   ```
+### Key Components
 
-3. Create a `.env.local` file in the root directory and add your EmailJS credentials:
+- **Navigation**: A responsive navigation bar that adapts to different screen sizes
+- **Hero Section**: A dynamic landing section with animated text and call-to-action buttons
+- **Projects**: A grid layout showcasing projects with filtering capabilities
+- **About**: A section dedicated to personal information and skills
+- **Resume**: A downloadable resume section
+- **Footer**: Social media links and additional information
 
-   ```
-   NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
-   NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id
-   NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
-   ```
+### Design Features
 
-4. Run the development server:
-
-   ```bash
-   npm run dev
-   ```
-
-5. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
-
-## Customization
-
-### Personal Information
-
-1. Update your personal information in the following files:
-   - `src/app/page.js`: Update the hero section with your name and title
-   - `src/app/about/page.js`: Update the biography and skills
-   - `src/app/resume/page.js`: Update your resume content
-   - `src/app/contact/page.js`: Update contact information and social media links
-
-### Projects
-
-1. Edit the projects array in `src/app/projects/page.js` to showcase your work:
-   ```javascript
-   const projects = [
-     {
-       title: "Project Title",
-       description: "Project description",
-       technologies: ["Tech1", "Tech2"],
-       image: "/projects/project-image.jpg",
-       github: "https://github.com/yourusername/project",
-       demo: "https://project-demo.com",
-     },
-     // Add more projects...
-   ];
-   ```
-
-### Styling
-
-1. The color scheme can be customized in `src/app/globals.css`:
-
-   ```css
-   :root {
-     --primary-color: #0d6efd;
-     --secondary-color: #6c757d;
-     --accent-color: #ffc107;
-   }
-   ```
-
-2. Additional custom styles can be added to the `@layer components` section in `globals.css`.
-
-### Images
-
-1. Add your project images to the `public/projects` directory
-2. Update the image paths in the projects array
-3. Add your resume PDF to the `public` directory as `resume.pdf`
-
-## Deployment
-
-The easiest way to deploy your portfolio is using Vercel:
-
-1. Push your code to GitHub
-2. Import your repository in Vercel
-3. Add your environment variables in the Vercel project settings
-4. Deploy!
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
+- Dark/Light mode support for better accessibility
+- Smooth page transitions and hover effects
+- Responsive images and layouts
+- Modern typography and spacing
+- Consistent color scheme throughout
