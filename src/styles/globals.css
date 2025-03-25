@@ -10,16 +10,16 @@
 
 @layer base {
   body {
-    @apply font-sans text-gray-900 antialiased;
+    @apply font-sans text-gray-900 antialiased dark:text-white;
   }
   h1 {
-    @apply text-4xl font-bold tracking-tight;
+    @apply text-4xl font-bold tracking-tight dark:text-white;
   }
   h2 {
-    @apply text-3xl font-bold tracking-tight;
+    @apply text-3xl font-bold tracking-tight dark:text-white;
   }
   h3 {
-    @apply text-2xl font-bold tracking-tight;
+    @apply text-2xl font-bold tracking-tight dark:text-white;
   }
 }
 
@@ -31,18 +31,18 @@
     @apply px-4 py-2 rounded-md font-medium transition-all duration-200;
   }
   .btn-primary {
-    @apply bg-black text-white hover:bg-gray-800;
+    @apply bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200;
   }
   .btn-secondary {
-    @apply bg-gray-100 text-gray-900 hover:bg-gray-200;
+    @apply bg-gray-100 text-gray-900 hover:bg-gray-200 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700;
   }
   .section {
     @apply py-16 sm:py-24;
   }
   .link {
-    @apply text-black underline underline-offset-4 hover:text-gray-600 transition-colors;
+    @apply text-black dark:text-white underline underline-offset-4 hover:text-gray-600 dark:hover:text-gray-300 transition-colors;
   }
   .card {
-    @apply bg-white border rounded-lg p-6 hover:border-black transition-colors duration-200;
+    @apply bg-white border rounded-lg p-6 hover:border-black transition-colors duration-200 dark:hover:border-white;
   }
 }

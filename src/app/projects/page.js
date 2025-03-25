@@ -34,7 +34,7 @@ export default function Projects() {
       <section className="container pt-32">
         <div className="max-w-3xl">
           <h1 className="text-4xl font-bold mb-6">Projects</h1>
-          <p className="text-lg text-gray-600 mb-12">
+          <p className="text-lg text-gray-600 dark:text-gray-300 mb-12">
             A selection of projects I've worked on, ranging from web
             applications to design systems.
           </p>
@@ -43,19 +43,21 @@ export default function Projects() {
         <div className="space-y-24">
           {projects.map((project, index) => (
             <div key={index} className="group">
-              <div className="aspect-video bg-gray-100 rounded-lg mb-6 overflow-hidden">
+              <div className="aspect-video bg-gray-100 dark:bg-gray-800 rounded-lg mb-6 overflow-hidden">
                 {/* Project preview image would go here */}
-                <div className="w-full h-full bg-gray-200"></div>
+                <div className="w-full h-full bg-gray-200 dark:bg-gray-700"></div>
               </div>
               <div className="max-w-3xl">
                 <div className="flex items-center gap-2 mb-2">
                   <h2 className="text-2xl font-bold">{project.title}</h2>
-                  <span className="text-sm text-gray-500">
+                  <span className="text-sm text-gray-500 dark:text-gray-400">
                     · {project.year}
                   </span>
                 </div>
-                <p className="text-gray-600 mb-4">{project.description}</p>
-                <p className="text-sm text-gray-500 mb-4">
+                <p className="text-gray-600 dark:text-gray-300 mb-4">
+                  {project.description}
+                </p>
+                <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
                   {project.technologies}
                 </p>
                 <div className="flex gap-4">

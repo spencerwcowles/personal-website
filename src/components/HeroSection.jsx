@@ -8,7 +8,7 @@ export default function HeroSection() {
           <h1 className="text-5xl sm:text-6xl font-bold mb-8">
             Spencer Cowles
           </h1>
-          <p className="text-lg text-gray-600 mb-8">
+          <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
             I'm a Computer Science student at UC San Diego, passionate about
             software development and building impactful solutions. As an active
             member of Triton Unmanned Areial Systems (TUAS) and Triton
@@ -40,7 +40,7 @@ export default function HeroSection() {
               href="/assets/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors dark:bg-gray-800 dark:border dark:border-gray-700 dark:hover:bg-gray-700 dark:hover:border-gray-600"
             >
               Download Resume
               <svg
@@ -61,7 +61,7 @@ export default function HeroSection() {
             </a>
           </div>
         </div>
-        <div className="relative w-64 h-64 rounded-lg overflow-hidden border-2 border-gray-200 flex-shrink-0 shadow-md">
+        <div className="relative w-64 h-64 rounded-lg overflow-hidden border-2 border-gray-200 dark:border-gray-700 flex-shrink-0 shadow-md">
           <Image
             src="/assets/profile.jpg"
             alt="Profile picture"
