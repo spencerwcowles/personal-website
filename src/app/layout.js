@@ -10,7 +10,7 @@ const robotoMono = Roboto_Mono({
 });
 
 export const metadata = {
-  title: "Spencer Cowles | Software Engineer",
+  title: "Spencer Cowles Portfolio",
   description: "Software Engineer and Full Stack Developer",
 };
 

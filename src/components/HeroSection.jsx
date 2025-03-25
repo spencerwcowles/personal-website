@@ -9,12 +9,13 @@ export default function HeroSection() {
             Spencer Cowles
           </h1>
           <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
-            I'm a Computer Science student at UC San Diego, passionate about
-            software development and building impactful solutions. As an active
-            member of Triton Unmanned Areial Systems (TUAS) and Triton
-            Consulting Group (TCG), I collaborate with fellow students to
-            deliver real-world projects while gaining hands-on experience in
-            full-stack development and technical consulting.
+            I'm a second-year at UC San Diego, majoring in{" "}
+            <strong>Mathematics</strong> and <strong>Computer Science</strong>{" "}
+            and minoring in <strong>Economics</strong>. As an active member of{" "}
+            <i>Triton Unmanned Aerial Systems</i> (TUAS) and{" "}
+            <i>Triton Consulting Group</i> (TCG), I collaborate with fellow
+            students to deliver real-world projects while gaining hands-on
+            experience in full-stack development and technical consulting.
           </p>
           <div className="flex flex-wrap items-center gap-6">
             <a

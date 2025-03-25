@@ -14,7 +14,7 @@ export const projects = [
     description:
       "Built a personal website using React.js to showcase projects and professional portfolio. Implemented responsive design and interactive elements for an enhanced user experience. Used GitHub for version control with regular commits to maintain code quality.",
     technologies: "JavaScript · HTML · CSS · React",
-    github: "https://github.com/spencerwcowles",
+    github: "https://github.com/spencerwcowles/personal-website",
     demo: "",
     year: "2024",
     image: "",

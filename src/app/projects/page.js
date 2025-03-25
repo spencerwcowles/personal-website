@@ -1,6 +1,10 @@
 import { projects } from "../../data/projects";
 import Footer from "../../components/Footer";
 
+//TODO: add tcg website
+//TODO: add photos of projects
+//TODO: maybe change the projects page into a grid of some sort? but it depends on how clean i want to keep it or not
+
 export default function Projects() {
   return (
     <div className="min-h-screen">
