@@ -1,5 +1,5 @@
 import { Inter, Roboto_Mono } from "next/font/google";
-import "./globals.css";
+import "../styles/globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const robotoMono = Roboto_Mono({
@@ -34,12 +34,6 @@ export default function RootLayout({ children }) {
                   className="text-gray-600 hover:text-black transition-colors"
                 >
                   projects
-                </a>
-                <a
-                  href="/resume"
-                  className="text-gray-600 hover:text-black transition-colors"
-                >
-                  resume
                 </a>
               </div>
             </div>
