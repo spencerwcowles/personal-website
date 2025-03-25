@@ -21,7 +21,7 @@ export default function HeroSection() {
               href="https://github.com/spencerwcowles"
               target="_blank"
               rel="noopener noreferrer"
-              className="link"
+              className="link text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors"
             >
               GitHub
             </a>
@@ -29,7 +29,7 @@ export default function HeroSection() {
               href="https://linkedin.com/in/spencercowles"
               target="_blank"
               rel="noopener noreferrer"
-              className="link"
+              className="link text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors"
             >
               LinkedIn
             </a>

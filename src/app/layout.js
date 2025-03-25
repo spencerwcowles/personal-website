@@ -45,13 +45,6 @@ export default function RootLayout({ children }) {
             </div>
           </nav>
           <main className="pt-16 min-h-screen">{children}</main>
-          <footer className="py-8 border-t border-gray-200 dark:border-gray-700">
-            <div className="max-w-5xl mx-auto px-6 sm:px-8">
-              <p className="text-center text-gray-500 dark:text-gray-400 text-sm">
-                © {new Date().getFullYear()} Spencer Cowles
-              </p>
-            </div>
-          </footer>
         </Providers>
       </body>
     </html>

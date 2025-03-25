@@ -1,16 +1,32 @@
 export const projects = [
   {
-    title: "E-commerce Platform",
+    title: "Triton UAS (Unmanned Aerial Systems)",
     description:
-      "A modern e-commerce platform with real-time inventory management and seamless payment processing.",
-    tech: "Next.js · React · Node.js · MongoDB",
-    link: "/projects",
+      "Developed and optimized path planning algorithms for autonomous drone navigation and aerial image capture. Implemented pathfinding techniques (A*, RRT*) to ensure drones reached designated targets efficiently while maximizing mission time. Integrated mapping functionality to stitch 100+ high-resolution images into cohesive maps during flight.",
+    technologies: "C++ · Python",
+    github: "https://github.com/spencerwcowles",
+    demo: "",
+    year: "2024",
+    image: "",
   },
   {
-    title: "Task Management System",
+    title: "Personal Website",
     description:
-      "Collaborative task management application with real-time updates and team features.",
-    tech: "React · Firebase · Tailwind CSS",
-    link: "/projects",
+      "Built a personal website using React.js to showcase projects and professional portfolio. Implemented responsive design and interactive elements for an enhanced user experience. Used GitHub for version control with regular commits to maintain code quality.",
+    technologies: "JavaScript · HTML · CSS · React",
+    github: "https://github.com/spencerwcowles",
+    demo: "",
+    year: "2024",
+    image: "",
+  },
+  {
+    title: "Pantry Food Tracker",
+    description:
+      "Built a pantry food tracker application to monitor inventory levels and minimize food waste, reducing inventory mismanagement by over 30% through automated alerts and data tracking features.",
+    technologies: "Python · SQLite",
+    github: "https://github.com/spencerwcowles",
+    demo: "",
+    year: "2024",
+    image: "",
   },
 ];
