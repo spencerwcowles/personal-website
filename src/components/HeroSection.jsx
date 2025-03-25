@@ -1,13 +1,15 @@
 import Image from "next/image";
+import { TextGenerateEffect } from "./ui/text-generate-effect";
 
 export default function HeroSection() {
   return (
     <section className="container pt-32 pb-16">
       <div className="flex flex-col md:flex-row gap-12 items-start max-w-4xl">
         <div className="flex-1">
-          <h1 className="text-5xl sm:text-6xl font-bold mb-8">
-            Spencer Cowles
-          </h1>
+          <TextGenerateEffect
+            words="Spencer Cowles"
+            className="text-5xl sm:text-6xl font-bold mb-8"
+          />
           <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
             I'm a second-year at UC San Diego, majoring in{" "}
             <strong>Mathematics</strong> and <strong>Computer Science</strong>{" "}

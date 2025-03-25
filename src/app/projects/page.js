@@ -1,6 +1,7 @@
 import { projects } from "../../data/projects";
 import Footer from "../../components/Footer";
 import AnimatedSection from "../../components/AnimatedSection";
+import { TextGenerateEffect } from "../../components/ui/text-generate-effect.jsx";
 
 //TODO: add tcg website
 //TODO: add photos of projects
@@ -12,7 +13,10 @@ export default function Projects() {
       <section className="container pt-32 pb-24">
         <AnimatedSection>
           <div className="max-w-3xl">
-            <h1 className="text-4xl font-bold mb-6">My Projects</h1>
+            <TextGenerateEffect
+              words="My Projects"
+              className="text-4xl font-bold mb-6"
+            />
           </div>
         </AnimatedSection>
 
