@@ -16,7 +16,7 @@ export default function HeroSection() {
             deliver real-world projects while gaining hands-on experience in
             full-stack development and technical consulting.
           </p>
-          <div className="flex flex-wrap gap-6">
+          <div className="flex flex-wrap items-center gap-6">
             <a
               href="https://github.com/spencerwcowles"
               target="_blank"
@@ -40,7 +40,7 @@ export default function HeroSection() {
               href="/assets/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors dark:bg-gray-800 dark:border dark:border-gray-700 dark:hover:bg-gray-700 dark:hover:border-gray-600"
+              className="inline-flex items-center gap-2 border border-transparent dark:border-gray-700 bg-gray-900 dark:bg-gray-800 text-white rounded-lg py-1 px-3 hover:bg-gray-800 dark:hover:bg-gray-700 dark:hover:border-gray-600 transition-colors"
             >
               Download Resume
               <svg
