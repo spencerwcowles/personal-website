@@ -8,6 +8,7 @@ export const projects = [
     demo: "",
     year: "2025",
     image: "/assets/tcg.png",
+    link: "",
   },
   {
     title: "Triton UAS (Unmanned Aerial Systems)",
@@ -18,6 +19,7 @@ export const projects = [
     demo: "",
     year: "2024",
     image: "",
+    link: "",
   },
   {
     title: "Personal Website",
@@ -28,5 +30,6 @@ export const projects = [
     demo: "",
     year: "2024",
     image: "",
+    link: "https://spencer-cowles.vercel.app",
   },
 ];
