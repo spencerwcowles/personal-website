@@ -1,6 +1,6 @@
 export default function ProjectCard({ title, description, tech, link }) {
   return (
-    <a href={link} className="card group dark:bg-gray-800 dark:border-gray-700">
+    <a href={link} className="block">
       <h3 className="text-xl font-semibold mb-2 group-hover:text-accent-color dark:text-white">
         {title}
       </h3>

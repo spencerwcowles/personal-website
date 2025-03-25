@@ -1,6 +1,7 @@
 import HeroSection from "../components/HeroSection";
 import ProjectCard from "../components/ProjectCard";
 import Footer from "../components/Footer";
+import AnimatedSection from "../components/AnimatedSection";
 import { projects } from "../data/projects";
 
 export default function Home() {
@@ -9,10 +10,18 @@ export default function Home() {
       <HeroSection />
 
       <section className="container py-16">
-        <h2 className="text-2xl font-bold mb-8">Recent Projects</h2>
+        <AnimatedSection>
+          <h2 className="text-2xl font-bold mb-8">Recent Projects</h2>
+        </AnimatedSection>
         <div className="grid grid-cols-1 gap-6">
           {projects.map((project, index) => (
-            <ProjectCard key={index} {...project} />
+            <AnimatedSection
+              key={index}
+              delay={index * 0.1}
+              className="card group dark:bg-gray-800 dark:border-gray-700"
+            >
+              <ProjectCard {...project} />
+            </AnimatedSection>
           ))}
         </div>
         <div className="mt-8">
@@ -23,9 +32,11 @@ export default function Home() {
       </section>
 
       <section className="container py-16">
-        <h2 className="text-2xl font-bold mb-8">Experience</h2>
+        <AnimatedSection>
+          <h2 className="text-2xl font-bold mb-8">Experience</h2>
+        </AnimatedSection>
         <div className="space-y-12">
-          <div>
+          <AnimatedSection>
             <h3 className="text-lg font-semibold">Computer Science Fellow</h3>
             <p className="text-gray-400 mb-2">
               Headstarter · July 2024 - August 2024
@@ -37,8 +48,8 @@ export default function Home() {
               Collaborated with a team of 4 fellows to implement best practices
               in software development.
             </p>
-          </div>
-          <div>
+          </AnimatedSection>
+          <AnimatedSection delay={0.1}>
             <h3 className="text-lg font-semibold">Math Tutor</h3>
             <p className="text-gray-400 mb-2">
               Mathnasium · Feb. 2021 - Feb. 2022
@@ -49,8 +60,8 @@ export default function Home() {
               Developed personalized lesson plans and monitored student progress
               weekly. Organized and led 20+ parent meetings to review growth.
             </p>
-          </div>
-          <div>
+          </AnimatedSection>
+          <AnimatedSection delay={0.2}>
             <h3 className="text-lg font-semibold">Summer Teaching Assistant</h3>
             <p className="text-gray-400 mb-2">
               All Saints Episcopal Day School · June 2024 - August 2024
@@ -63,7 +74,7 @@ export default function Home() {
               educational games/interactive activities with 95% participation
               rate.
             </p>
-          </div>
+          </AnimatedSection>
         </div>
       </section>
       <Footer />

@@ -8,7 +8,7 @@ import Footer from "../../components/Footer";
 export default function Projects() {
   return (
     <div className="min-h-screen">
-      <section className="container pt-32">
+      <section className="container pt-32 pb-24">
         <div className="max-w-3xl">
           <h1 className="text-4xl font-bold mb-6">My Projects</h1>
         </div>
