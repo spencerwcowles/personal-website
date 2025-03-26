@@ -19,6 +19,10 @@ export default function HeroSection() {
             students to deliver real-world projects while gaining hands-on
             experience in full-stack development and technical consulting.
           </p>
+          <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
+            In my free time, I love listening to music, playing basketball, and
+            collecting vinyl records!
+          </p>
           <div className="flex flex-wrap items-center gap-6">
             <a
               href="https://github.com/spencerwcowles"
