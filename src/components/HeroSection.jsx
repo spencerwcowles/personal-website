@@ -5,11 +5,13 @@ export default function HeroSection() {
   return (
     <section className="container pt-32 pb-16">
       <div className="flex flex-col md:flex-row gap-12 items-start max-w-4xl">
-        <div className="flex-1">
-          <TextGenerateEffect
-            words="Spencer Cowles"
-            className="text-5xl sm:text-6xl font-bold mb-8"
-          />
+        <div className="flex-1 order-2 md:order-1">
+          <div className="flex items-center gap-3 mb-8">
+            <TextGenerateEffect
+              words="Hi, I'm Spencer Cowles 👋"
+              className="text-5xl sm:text-6xl font-bold"
+            />
+          </div>
           <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
             I'm a second-year at <strong>UC San Diego</strong>, majoring in{" "}
             <strong>Mathematics</strong> and <strong>Computer Science</strong>{" "}
@@ -68,7 +70,7 @@ export default function HeroSection() {
             </a>
           </div>
         </div>
-        <div className="relative w-64 h-64 rounded-lg overflow-hidden border-2 border-gray-200 dark:border-gray-700 flex-shrink-0 shadow-md">
+        <div className="relative w-64 h-64 rounded-lg overflow-hidden border-2 border-gray-200 dark:border-gray-700 flex-shrink-0 shadow-md mt-16 order-1 md:order-2">
           <Image
             src="/assets/profile.jpg"
             alt="Spencer Cowles"
