@@ -34,11 +34,13 @@ export default function Projects() {
                   </div>
                 )}
                 <div className="max-w-3xl">
-                  <div className="flex items-center gap-2 mb-2">
+                  <div className="flex flex-wrap items-center gap-2 mb-2">
                     <h2 className="text-2xl font-bold">{project.title}</h2>
-                    <span className="text-sm text-gray-500 dark:text-gray-400">
-                      · {project.year}
-                    </span>
+                    <div className="flex items-center gap-1">
+                      <span className="text-sm text-gray-500 dark:text-gray-400">
+                        {project.year}
+                      </span>
+                    </div>
                   </div>
                   <p className="text-gray-600 dark:text-gray-300 mb-4">
                     {project.description}
