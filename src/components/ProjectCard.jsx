@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function ProjectCard({ title, description, tech, link, year }) {
   const content = (
     <>

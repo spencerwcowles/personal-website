@@ -2,6 +2,7 @@ import { projects } from "../../data/projects";
 import Footer from "../../components/Footer";
 import AnimatedSection from "../../components/AnimatedSection";
 import { TextGenerateEffect } from "../../components/ui/text-generate-effect.jsx";
+import Image from "next/image";
 
 //TODO: add tcg website
 //TODO: add photos of projects
@@ -25,11 +26,15 @@ export default function Projects() {
             <AnimatedSection key={index} delay={index * 0.1}>
               <div className="group">
                 {project.image && (
-                  <div className="aspect-video bg-gray-100 dark:bg-gray-800 rounded-lg mb-6 overflow-hidden">
-                    <img
+                  <div className="aspect-video bg-gray-100 dark:bg-gray-800 rounded-lg mb-6 overflow-hidden relative">
+                    <Image
                       src={project.image}
-                      alt="Spencer Cowles"
-                      className="w-full h-full object-cover"
+                      alt={project.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      style={{ objectFit: "cover" }}
+                      loading="lazy"
+                      quality={75}
                     />
                   </div>
                 )}
