@@ -11,7 +11,7 @@ export default function HeroSection() {
             className="text-5xl sm:text-6xl font-bold mb-8"
           />
           <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
-            I'm a second-year at UC San Diego, majoring in{" "}
+            I'm a second-year at <strong>UC San Diego</strong>, majoring in{" "}
             <strong>Mathematics</strong> and <strong>Computer Science</strong>{" "}
             and minoring in <strong>Economics</strong>. As an active member of{" "}
             <i>Triton Unmanned Aerial Systems</i> (TUAS) and{" "}
