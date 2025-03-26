@@ -67,7 +67,7 @@ export default function HeroSection() {
         <div className="relative w-64 h-64 rounded-lg overflow-hidden border-2 border-gray-200 dark:border-gray-700 flex-shrink-0 shadow-md">
           <Image
             src="/assets/profile.jpg"
-            alt="Profile picture"
+            alt="Spencer Cowles"
             fill
             style={{ objectFit: "cover" }}
             priority

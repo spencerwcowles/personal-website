@@ -28,7 +28,7 @@ export default function Projects() {
                   <div className="aspect-video bg-gray-100 dark:bg-gray-800 rounded-lg mb-6 overflow-hidden">
                     <img
                       src={project.image}
-                      alt={`${project.title} preview`}
+                      alt="Spencer Cowles"
                       className="w-full h-full object-cover"
                     />
                   </div>
