@@ -42,6 +42,6 @@ export const projects = [
         demo: "",
         year: "2024",
         image: "",
-        link: "spencercowles.com",
+        link: "https://spencercowles.com",
     },
 ];
