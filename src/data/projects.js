@@ -8,7 +8,7 @@ export const projects = [
         github: "https://github.com/mayhong1/diamondhacks",
         demo: "",
         year: "2025",
-        image: "/assets/notredshirt.jpeg",
+        image: "/assets/notredshirt.png",
         link: "https://devpost.com/software/no-red-shirt",
     },
     {
