@@ -34,7 +34,7 @@ export default function Footer() {
             </a>
           </div>
           <p className="text-sm text-gray-500 dark:text-gray-400">
-            © {new Date().getFullYear()} Spencer Cowles
+            © {new Date().getFullYear()} spencercowles.com
           </p>
         </div>
       </div>
