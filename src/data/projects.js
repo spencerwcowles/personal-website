@@ -9,6 +9,7 @@ export const projects = [
     devpost: "https://devpost.com/software/no-red-shirt",
     year: "2025",
     image: "/assets/notredshirt.png",
+    link: "https://devpost.com/software/no-red-shirt",
   },
   {
     title: "Triton Consulting Group Application Portal",
@@ -18,6 +19,7 @@ export const projects = [
     github: "https://github.com/triton-consulting-group/tcg-application-portal",
     year: "2025",
     image: "/assets/tcg.png",
+    link: "https://github.com/triton-consulting-group/tcg-application-portal",
   },
   {
     title: "Triton UAS (Unmanned Aerial Systems)",
@@ -25,6 +27,7 @@ export const projects = [
       "Optimized autonomous drone navigation using A* and RRT* pathfinding algorithms. Developed real-time mapping system to stitch 100+ aerial images into cohesive maps during flight. Maximized mission efficiency through intelligent path planning.",
     technologies: "C++ · Python",
     github: "https://github.com/spencerwcowles",
+    link: "https://github.com/spencerwcowles",
     year: "2024",
     image: "",
   },
