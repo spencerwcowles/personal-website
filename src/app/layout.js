@@ -1,6 +1,7 @@
 import { Inter, Roboto_Mono } from "next/font/google";
 import ThemeToggle from "../components/ThemeToggle";
 import Providers from "../components/Providers";
+import { Analytics } from "@vercel/analytics/react";
 import "../styles/globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -61,6 +62,7 @@ export default function RootLayout({ children }) {
           </nav>
           <main className="pt-16 min-h-screen">{children}</main>
         </Providers>
+        <Analytics />
       </body>
     </html>
   );
