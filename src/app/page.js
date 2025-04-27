@@ -1,3 +1,5 @@
+"use client";
+
 import HeroSection from "../components/HeroSection";
 import ProjectCard from "../components/ProjectCard";
 import Footer from "../components/Footer";
