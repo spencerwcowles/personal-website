@@ -1,10 +1,9 @@
 "use client";
 
 import HeroSection from "../components/HeroSection";
-import ProjectCard from "../components/ProjectCard";
+import Projects from "../components/Projects";
 import Footer from "../components/Footer";
 import AnimatedSection from "../components/AnimatedSection";
-import { projects } from "../data/projects";
 
 export default function Home() {
   return (
@@ -15,24 +14,9 @@ export default function Home() {
 
       <section id="projects" className="container py-16">
         <AnimatedSection>
-          <h2 className="text-2xl font-bold mb-8">Recent Projects</h2>
+          <h2 className="text-2xl font-bold mb-8">Projects</h2>
         </AnimatedSection>
-        <div className="grid grid-cols-1 gap-6">
-          {projects.map((project, index) => (
-            <AnimatedSection
-              key={index}
-              delay={index * 0.1}
-              className="card group dark:bg-gray-800 dark:border-gray-700"
-            >
-              <ProjectCard {...project} />
-            </AnimatedSection>
-          ))}
-        </div>
-        <div className="mt-8">
-          <a href="/projects" className="link">
-            View all projects →
-          </a>
-        </div>
+        <Projects />
       </section>
 
       <section id="experience" className="container py-16">

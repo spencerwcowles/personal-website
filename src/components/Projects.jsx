@@ -1,0 +1,290 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { getProjects } from "@/lib/projects";
+import { useTheme } from "next-themes";
+import Image from "next/image";
+
+// Theme-aware image component that switches between dark and light variants
+function ThemeAwareImage({ src, alt, className, scale }) {
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted)
+    return (
+      <Image
+        src={src}
+        alt={alt}
+        className={className}
+        width={400}
+        height={300}
+      />
+    );
+
+  return (
+    <Image src={src} alt={alt} className={className} width={400} height={300} />
+  );
+}
+
+function ThemedCard({ children, className = "" }) {
+  const { resolvedTheme } = useTheme();
+  const bgClass =
+    resolvedTheme === "light"
+      ? "bg-white border border-neutral-200"
+      : "bg-slate-800/80 border border-slate-700";
+  return (
+    <Card
+      className={`h-full transition-all duration-300 shadow-lg ${bgClass} ${className}`}
+    >
+      {children}
+    </Card>
+  );
+}
+
+export default function Projects() {
+  const [expandedCardIndex, setExpandedCardIndex] = useState(null);
+  const [showAllProjects, setShowAllProjects] = useState(false);
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    setProjects(getProjects());
+  }, []);
+
+  const visibleProjects = showAllProjects ? projects : projects.slice(0, 3);
+  const hiddenProjectsCount = projects.length - 3;
+
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+      {visibleProjects.map((project, index) => (
+        <ProjectCard
+          key={index}
+          project={project}
+          index={index}
+          isExpanded={expandedCardIndex === index}
+          setExpandedCardIndex={setExpandedCardIndex}
+        />
+      ))}
+
+      {!showAllProjects && hiddenProjectsCount > 0 && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 3 * 0.1 }}
+          whileHover={{
+            y: -5,
+            boxShadow:
+              "0 10px 25px -5px rgba(0,0,0,0.25), 0 8px 10px -6px rgba(0,0,0,0.18)",
+            scale: 1.02,
+            transition: { duration: 0.2 },
+          }}
+          className={`h-full ${
+            visibleProjects.length % 3 === 0
+              ? "lg:col-start-2 md:col-start-2 col-span-1"
+              : visibleProjects.length % 3 === 1
+              ? "lg:col-start-2 md:col-start-1 col-span-1"
+              : visibleProjects.length % 3 === 2
+              ? "lg:col-start-3 md:col-start-2 col-span-1"
+              : ""
+          }`}
+          onClick={() => setShowAllProjects(true)}
+        >
+          <ThemedCard className="cursor-pointer flex flex-col items-center justify-center">
+            <CardHeader className="p-4 text-center">
+              <CardTitle>Show {hiddenProjectsCount} More Projects</CardTitle>
+              <CardDescription>Click to view all my work</CardDescription>
+            </CardHeader>
+
+            <CardContent className="p-4 pt-0 flex-1 flex items-center justify-center">
+              <div className="w-full flex flex-col items-center justify-center">
+                <div className="rounded-full bg-secondary w-16 h-16 flex items-center justify-center mb-4">
+                  <FontAwesomeIcon
+                    icon={faPlus}
+                    className="h-8 w-8 text-secondary-foreground"
+                  />
+                </div>
+                <p className="text-center text-sm text-muted-foreground">
+                  Explore {hiddenProjectsCount} additional projects in my
+                  portfolio
+                </p>
+              </div>
+            </CardContent>
+          </ThemedCard>
+        </motion.div>
+      )}
+
+      {showAllProjects && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+          whileHover={{
+            y: -5,
+            boxShadow:
+              "0 10px 25px -5px rgba(0,0,0,0.25), 0 8px 10px -6px rgba(0,0,0,0.18)",
+            scale: 1.02,
+            transition: { duration: 0.2 },
+          }}
+          className={`h-full ${
+            projects.length % 3 === 0
+              ? "lg:col-start-2 md:col-start-2 col-span-1"
+              : projects.length % 3 === 1
+              ? "lg:col-start-2 md:col-start-1 col-span-1"
+              : projects.length % 3 === 2
+              ? "lg:col-start-3 md:col-start-2 col-span-1"
+              : ""
+          }`}
+          onClick={() => setShowAllProjects(false)}
+        >
+          <ThemedCard className="cursor-pointer flex flex-col items-center justify-center">
+            <CardHeader className="p-4 text-center">
+              <CardTitle>Show Fewer Projects</CardTitle>
+              <CardDescription>Return to featured work</CardDescription>
+            </CardHeader>
+
+            <CardContent className="p-4 pt-0 flex-1 flex items-center justify-center">
+              <div className="w-full flex flex-col items-center justify-center">
+                <div className="rounded-full bg-secondary w-16 h-16 flex items-center justify-center mb-4">
+                  <FontAwesomeIcon
+                    icon={faMinus}
+                    className="h-8 w-8 text-secondary-foreground"
+                  />
+                </div>
+                <p className="text-center text-sm text-muted-foreground">
+                  Display only featured projects
+                </p>
+              </div>
+            </CardContent>
+          </ThemedCard>
+        </motion.div>
+      )}
+    </div>
+  );
+}
+
+function ProjectCard({ project, index, isExpanded, setExpandedCardIndex }) {
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleInteraction = () => {
+    setExpandedCardIndex(isExpanded ? null : index);
+  };
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4, delay: index * 0.1 }}
+      whileHover={{
+        y: -5,
+        boxShadow:
+          "0 10px 25px -5px rgba(0,0,0,0.25), 0 8px 10px -6px rgba(0,0,0,0.18)",
+        scale: 1.02,
+        transition: { duration: 0.2 },
+      }}
+      className="h-full min-h-[360px]"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      onClick={handleInteraction}
+    >
+      <ThemedCard className="h-full">
+        <CardHeader className="p-4">
+          <CardTitle className="font-extrabold text-2xl">
+            {project.title}
+          </CardTitle>
+          <CardDescription className="h-[48px] flex items-end">
+            {project.summary}
+          </CardDescription>
+        </CardHeader>
+
+        <CardContent className="p-4 pt-0">
+          {project.image && (
+            <div className="w-full h-56 flex items-center justify-center overflow-hidden rounded-md mb-4 bg-white/5">
+              <ThemeAwareImage
+                src={project.image}
+                alt={project.title}
+                className="object-contain max-h-full max-w-full"
+                scale={project.imageScale}
+              />
+            </div>
+          )}
+
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{
+              opacity: isHovered || isExpanded ? 1 : 0,
+              height: isHovered || isExpanded ? "auto" : 0,
+            }}
+            transition={{ duration: 0.3 }}
+            className="overflow-hidden"
+          >
+            <p className="text-sm text-muted-foreground mb-4">
+              {project.description}
+            </p>
+            <div className="flex flex-wrap gap-2 mb-4">
+              {project.tags.map((tag, i) => (
+                <span
+                  key={i}
+                  className="text-xs px-2 py-1 bg-secondary text-secondary-foreground rounded-full"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            <div className="flex gap-2 mt-4">
+              {project.github && (
+                <Button
+                  className="h-9 rounded-md px-3 bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    if (project.github) {
+                      window.open(project.github, "_blank");
+                    }
+                  }}
+                >
+                  <FontAwesomeIcon icon={faGithub} className="h-4 w-4 mr-2" />
+                  GitHub
+                </Button>
+              )}
+
+              {project.live && (
+                <Button
+                  className="h-9 rounded-md px-3 bg-primary text-primary-foreground hover:bg-primary/90"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    if (project.live) {
+                      window.open(project.live, "_blank");
+                    }
+                  }}
+                >
+                  <FontAwesomeIcon
+                    icon={faArrowUpRightFromSquare}
+                    className="h-4 w-4 mr-2"
+                  />
+                  View Project
+                </Button>
+              )}
+            </div>
+          </motion.div>
+        </CardContent>
+      </ThemedCard>
+    </motion.div>
+  );
+}
