@@ -7,9 +7,11 @@ import { projects } from "../data/projects";
 export default function Home() {
   return (
     <div className="min-h-screen">
-      <HeroSection />
+      <div id="header">
+        <HeroSection />
+      </div>
 
-      <section className="container py-16">
+      <section id="projects" className="container py-16">
         <AnimatedSection>
           <h2 className="text-2xl font-bold mb-8">Recent Projects</h2>
         </AnimatedSection>
@@ -31,7 +33,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container py-16">
+      <section id="experience" className="container py-16">
         <AnimatedSection>
           <h2 className="text-2xl font-bold mb-8">Experience</h2>
         </AnimatedSection>
@@ -77,6 +79,7 @@ export default function Home() {
           </AnimatedSection>
         </div>
       </section>
+      <div className="h-32" />
       <Footer />
     </div>
   );
