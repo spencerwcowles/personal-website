@@ -24,7 +24,7 @@ export default function AlbumCarousel({
   const [isVisible, setIsVisible] = useState(false);
   const carouselRef = useRef<HTMLDivElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number>(0);
   const lastTimestampRef = useRef<number>(0);
   const positionRef = useRef<number>(0);
   const observerRef = useRef<IntersectionObserver | null>(null);
