@@ -106,9 +106,6 @@ export default function GoalsSection() {
 
   return (
     <div ref={sectionRef} className="w-full max-w-2xl mx-auto py-8">
-      <h2 className="text-3xl font-bold mb-8 text-center">
-        Things I'm Working On
-      </h2>
       <div className="space-y-6">
         {goals.map((goal, index) => {
           const percentage =

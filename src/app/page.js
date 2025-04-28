@@ -29,10 +29,21 @@ export default function Home() {
         <h2 className="text-4xl font-extrabold mb-12 text-center">
           My Interests
         </h2>
-        <AlbumCarousel albums={albums} speed={50} />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-          <StravaWidget />
-          <GoalsSection />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+          <div className="text-center">
+            <h3 className="text-2xl font-bold mb-6">My Strava</h3>
+            <StravaWidget />
+          </div>
+          <div className="text-center">
+            <h3 className="text-2xl font-bold mb-6">Personal Goals</h3>
+            <GoalsSection />
+          </div>
+        </div>
+        <div className="mb-16">
+          <h3 className="text-2xl font-bold mb-6 text-center">
+            My Favorite Albums
+          </h3>
+          <AlbumCarousel albums={albums} speed={50} />
         </div>
       </section>
       <div className="h-32" />

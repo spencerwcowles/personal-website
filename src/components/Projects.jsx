@@ -16,31 +16,6 @@ import { getProjects } from "@/lib/projects";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 
-// Theme-aware image component that switches between dark and light variants
-function ThemeAwareImage({ src, alt, className, scale }) {
-  const { resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted)
-    return (
-      <Image
-        src={src}
-        alt={alt}
-        className={className}
-        width={400}
-        height={300}
-      />
-    );
-
-  return (
-    <Image src={src} alt={alt} className={className} width={400} height={300} />
-  );
-}
-
 function ThemedCard({ children, className = "" }) {
   const { resolvedTheme } = useTheme();
   const bgClass =
@@ -171,8 +146,6 @@ export default function Projects() {
 }
 
 function ProjectCard({ project, index, isExpanded, setExpandedCardIndex }) {
-  const [isHovered, setIsHovered] = useState(false);
-
   const handleInteraction = () => {
     setExpandedCardIndex(isExpanded ? null : index);
   };
@@ -190,8 +163,6 @@ function ProjectCard({ project, index, isExpanded, setExpandedCardIndex }) {
         transition: { duration: 0.2 },
       }}
       className="h-full min-h-[360px]"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
       onClick={handleInteraction}
     >
       <ThemedCard className="h-full">
@@ -207,11 +178,17 @@ function ProjectCard({ project, index, isExpanded, setExpandedCardIndex }) {
         <CardContent className="p-4 pt-0">
           {project.image && (
             <div className="w-full h-56 flex items-center justify-center overflow-hidden rounded-md mb-4 bg-white/5">
-              <ThemeAwareImage
+              <Image
                 src={project.image}
-                alt={project.title}
+                alt="Spencer Cowles"
                 className="object-contain max-h-full max-w-full"
-                scale={project.imageScale}
+                width={400 * (project.imageScale || 1)}
+                height={300 * (project.imageScale || 1)}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                quality={90}
+                loading="lazy"
+                placeholder="blur"
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSEkLzYvLy0vLzY3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzb/2wBDAR0dHh4eHRoaHSQtJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJSUlJb/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
               />
             </div>
           )}
@@ -219,8 +196,8 @@ function ProjectCard({ project, index, isExpanded, setExpandedCardIndex }) {
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{
-              opacity: isHovered || isExpanded ? 1 : 0,
-              height: isHovered || isExpanded ? "auto" : 0,
+              opacity: isExpanded ? 1 : 0,
+              height: isExpanded ? "auto" : 0,
             }}
             transition={{ duration: 0.3 }}
             className="overflow-hidden"
