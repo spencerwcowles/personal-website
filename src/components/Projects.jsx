@@ -2,10 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
-import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
+import { FaGithub, FaExternalLinkAlt, FaPlus, FaMinus } from "react-icons/fa";
 import {
   Card,
   CardContent,
@@ -115,10 +112,7 @@ export default function Projects() {
             <CardContent className="p-4 pt-0 flex-1 flex items-center justify-center">
               <div className="w-full flex flex-col items-center justify-center">
                 <div className="rounded-full bg-secondary w-16 h-16 flex items-center justify-center mb-4">
-                  <FontAwesomeIcon
-                    icon={faPlus}
-                    className="h-8 w-8 text-secondary-foreground"
-                  />
+                  <FaPlus className="h-8 w-8 text-secondary-foreground" />
                 </div>
                 <p className="text-center text-sm text-muted-foreground">
                   Explore {hiddenProjectsCount} additional projects in my
@@ -162,10 +156,7 @@ export default function Projects() {
             <CardContent className="p-4 pt-0 flex-1 flex items-center justify-center">
               <div className="w-full flex flex-col items-center justify-center">
                 <div className="rounded-full bg-secondary w-16 h-16 flex items-center justify-center mb-4">
-                  <FontAwesomeIcon
-                    icon={faMinus}
-                    className="h-8 w-8 text-secondary-foreground"
-                  />
+                  <FaMinus className="h-8 w-8 text-secondary-foreground" />
                 </div>
                 <p className="text-center text-sm text-muted-foreground">
                   Display only featured projects
@@ -259,7 +250,7 @@ function ProjectCard({ project, index, isExpanded, setExpandedCardIndex }) {
                     }
                   }}
                 >
-                  <FontAwesomeIcon icon={faGithub} className="h-4 w-4 mr-2" />
+                  <FaGithub className="h-4 w-4 mr-2" />
                   GitHub
                 </Button>
               )}
@@ -274,10 +265,7 @@ function ProjectCard({ project, index, isExpanded, setExpandedCardIndex }) {
                     }
                   }}
                 >
-                  <FontAwesomeIcon
-                    icon={faArrowUpRightFromSquare}
-                    className="h-4 w-4 mr-2"
-                  />
+                  <FaExternalLinkAlt className="h-4 w-4 mr-2" />
                   View Project
                 </Button>
               )}

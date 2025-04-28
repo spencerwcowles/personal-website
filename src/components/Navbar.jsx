@@ -1,8 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { FaChevronDown } from "react-icons/fa";
 import ThemeToggle from "./ThemeToggle";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -10,6 +9,7 @@ const navItems = [
   { id: "header", label: "Home" },
   { id: "projects", label: "Projects" },
   { id: "experience", label: "Experience" },
+  { id: "interests", label: "Interests" },
 ];
 
 export default function Navbar() {
@@ -133,8 +133,7 @@ export default function Navbar() {
               >
                 {currentSection}
               </span>
-              <FontAwesomeIcon
-                icon={faChevronDown}
+              <FaChevronDown
                 className={`transition-transform duration-200 ${
                   isDropdownOpen ? "rotate-180" : ""
                 }`}

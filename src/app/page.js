@@ -5,6 +5,10 @@ import Projects from "../components/Projects";
 import Footer from "../components/Footer";
 import AnimatedSection from "../components/AnimatedSection";
 import Experience from "../components/Experience";
+import AlbumCarousel from "../components/AlbumCarousel";
+import { albums } from "../lib/albums";
+import StravaWidget from "../components/StravaWidget";
+import GoalsSection from "../components/GoalsSection";
 
 export default function Home() {
   return (
@@ -20,6 +24,16 @@ export default function Home() {
 
       <section id="experience" className="container py-16">
         <Experience />
+      </section>
+      <section id="interests" className="container py-16">
+        <h2 className="text-4xl font-extrabold mb-12 text-center">
+          My Interests
+        </h2>
+        <AlbumCarousel albums={albums} speed={50} />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+          <StravaWidget />
+          <GoalsSection />
+        </div>
       </section>
       <div className="h-32" />
       <Footer />

@@ -1,8 +1,7 @@
 import Image from "next/image";
 import { TextGenerateEffect } from "./ui/text-generate-effect";
 import { useEffect, useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { FaChevronDown } from "react-icons/fa";
 
 export default function HeroSection() {
   const [showArrow, setShowArrow] = useState(true);
@@ -108,10 +107,7 @@ export default function HeroSection() {
           onClick={handleArrowClick}
           className="fixed bottom-8 left-1/2 transform -translate-x-1/2 bg-white/80 dark:bg-gray-900/80 rounded-full shadow-md p-2 z-20 animate-bounce border border-gray-200 dark:border-gray-700 hover:bg-blue-100 dark:hover:bg-blue-900 transition-colors"
         >
-          <FontAwesomeIcon
-            icon={faChevronDown}
-            className="h-6 w-6 text-blue-600 dark:text-blue-400"
-          />
+          <FaChevronDown className="h-6 w-6 text-blue-600 dark:text-blue-400" />
         </button>
       )}
     </section>
