@@ -96,10 +96,7 @@ export default function Experience() {
   return (
     <div className="relative max-w-2xl mx-auto">
       <h2 className="text-4xl font-extrabold mb-12 text-center">Experience</h2>
-      <div
-        className="absolute left-4 md:left-1/2 h-full w-0.5 bg-slate-700 dark:bg-slate-600 transform md:-translate-x-1/2"
-        style={{ zIndex: 0 }}
-      />
+      <div className="absolute left-4 md:left-1/2 h-full w-0.5 bg-slate-700 dark:bg-slate-600 transform md:-translate-x-1/2 z-0" />
       <div className="space-y-12 relative">
         {experiences.map((experience, index) => (
           <TimelineItem
@@ -134,14 +131,14 @@ const TimelineItem = forwardRef(function TimelineItem(
         transition={{ duration: 0.5, delay: index * 0.1 }}
       >
         <div
-          className={`$${
+          className={`${
             isActive
-              ? "bg-white dark:bg-slate-900 border-blue-400 dark:border-cyan-300 border-2 ring-2 ring-blue-300 dark:ring-cyan-400 ring-offset-2 scale-[1.02]"
+              ? "bg-white dark:bg-slate-900 border-blue-900 dark:border-cyan-300 border-2 scale-[1.02]"
               : "bg-white dark:bg-slate-900 border-neutral-200 dark:border-slate-700 border-2"
-          } rounded-lg p-6 shadow-lg transition-all duration-300 relative z-10 text-gray-900 dark:text-white`}
+          } rounded-lg p-6 shadow-lg transition-all duration-300 relative z-20 text-gray-900 dark:text-white`}
         >
           <h3 className="text-xl font-bold mb-1">{experience.title}</h3>
-          <h4 className="text-lg font-semibold text-blue-600 dark:text-cyan-300 mb-1">
+          <h4 className="text-lg font-semibold text-blue-900 dark:text-cyan-300 mb-1">
             {experience.url ? (
               <a
                 href={experience.url}
@@ -167,15 +164,15 @@ const TimelineItem = forwardRef(function TimelineItem(
         <div
           className={`w-8 h-8 rounded-full transition-colors duration-300 border-4 border-neutral-200 dark:border-slate-700 ${
             isActive
-              ? "bg-blue-400 dark:bg-cyan-400"
+              ? "bg-blue-900 dark:bg-cyan-400"
               : "bg-gray-200 dark:bg-slate-700"
           } flex items-center justify-center`}
         >
           <span
-            className={`$${
+            className={`${
               isActive
-                ? "text-blue-900 dark:text-cyan-900"
-                : "text-gray-500 dark:text-gray-300"
+                ? "text-white dark:text-cyan-900"
+                : "text-blue-900 dark:text-cyan-300"
             } text-sm font-bold`}
           >
             {index + 1}
