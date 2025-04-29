@@ -20,11 +20,11 @@ function ThemedCard({ children, className = "" }) {
   const { resolvedTheme } = useTheme();
   const bgClass =
     resolvedTheme === "light"
-      ? "bg-white border border-neutral-200"
-      : "bg-slate-800/80 border border-slate-700";
+      ? "bg-white border border-neutral-200 hover:border-neutral-300"
+      : "bg-slate-800/80 border border-slate-700 hover:bg-slate-700/80 hover:border-slate-600";
   return (
     <Card
-      className={`h-full transition-all duration-300 shadow-lg ${bgClass} ${className}`}
+      className={`h-full transition-all duration-300 shadow-lg cursor-pointer ${bgClass} ${className}`}
     >
       {children}
     </Card>
@@ -154,14 +154,33 @@ function ProjectCard({ project, index, isExpanded, setExpandedCardIndex }) {
         scale: 1.02,
         transition: { duration: 0.2 },
       }}
-      className="h-full min-h-[360px]"
+      className="h-full min-h-[360px] group"
       onClick={handleInteraction}
     >
       <ThemedCard className="h-full">
         <CardHeader className="p-4">
-          <CardTitle className="font-extrabold text-2xl">
-            {project.title}
-          </CardTitle>
+          <div className="flex items-center justify-between">
+            <CardTitle className="font-extrabold text-2xl">
+              {project.title}
+            </CardTitle>
+            <div className="transform transition-transform duration-300 group-hover:translate-x-1">
+              <svg
+                className={`w-5 h-5 text-muted-foreground transition-transform duration-300 ${
+                  isExpanded ? "rotate-180" : ""
+                }`}
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </div>
+          </div>
           <CardDescription className="h-[48px] flex items-end">
             {project.summary}
           </CardDescription>
