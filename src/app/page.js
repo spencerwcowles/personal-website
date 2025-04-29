@@ -7,6 +7,7 @@ import SectionLoading from "../components/ui/section-loading";
 import { albums } from "../lib/albums";
 import StravaWidget from "../components/StravaWidget";
 import Footer from "../components/Footer";
+import ParallaxBackground from "../components/ParallaxBackground";
 
 const Projects = dynamic(() => import("../components/Projects"), {
   loading: () => <Loading />,
@@ -31,6 +32,7 @@ const AlbumCarousel = dynamic(() => import("../components/AlbumCarousel"), {
 export default function Home() {
   return (
     <div className="min-h-screen">
+      <ParallaxBackground />
       <div id="header">
         <HeroSection />
       </div>
