@@ -40,8 +40,8 @@ export default function Projects() {
     setProjects(getProjects());
   }, []);
 
-  const visibleProjects = showAllProjects ? projects : projects.slice(0, 3);
-  const hiddenProjectsCount = projects.length - 3;
+  const visibleProjects = showAllProjects ? projects : projects.slice(0, 2);
+  const hiddenProjectsCount = projects.length - 2;
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
@@ -59,7 +59,7 @@ export default function Projects() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 3 * 0.1 }}
+          transition={{ duration: 0.4, delay: 2 * 0.1 }}
           whileHover={{
             y: -5,
             boxShadow:
@@ -68,13 +68,9 @@ export default function Projects() {
             transition: { duration: 0.2 },
           }}
           className={`h-full ${
-            visibleProjects.length % 3 === 0
-              ? "lg:col-start-2 md:col-start-2 col-span-1"
-              : visibleProjects.length % 3 === 1
-              ? "lg:col-start-2 md:col-start-1 col-span-1"
-              : visibleProjects.length % 3 === 2
-              ? "lg:col-start-3 md:col-start-2 col-span-1"
-              : ""
+            visibleProjects.length % 2 === 0
+              ? "lg:col-start-1 md:col-start-1 col-span-1"
+              : "lg:col-start-2 md:col-start-2 col-span-1"
           }`}
           onClick={() => setShowAllProjects(true)}
         >
@@ -112,13 +108,9 @@ export default function Projects() {
             transition: { duration: 0.2 },
           }}
           className={`h-full ${
-            projects.length % 3 === 0
-              ? "lg:col-start-2 md:col-start-2 col-span-1"
-              : projects.length % 3 === 1
-              ? "lg:col-start-2 md:col-start-1 col-span-1"
-              : projects.length % 3 === 2
-              ? "lg:col-start-3 md:col-start-2 col-span-1"
-              : ""
+            projects.length % 2 === 0
+              ? "lg:col-start-1 md:col-start-1 col-span-1"
+              : "lg:col-start-2 md:col-start-2 col-span-1"
           }`}
           onClick={() => setShowAllProjects(false)}
         >
