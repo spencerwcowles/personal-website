@@ -30,14 +30,26 @@ const FloatingElement = ({ children, delay = 0, className = "" }) => {
 export default function HeroSection() {
   const [showArrow, setShowArrow] = useState(true);
   const [scrollY, setScrollY] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
       setShowArrow(window.scrollY < window.innerHeight / 2);
     };
+
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("resize", checkMobile);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", checkMobile);
+    };
   }, []);
 
   const handleArrowClick = () => {
@@ -47,13 +59,19 @@ export default function HeroSection() {
     }
   };
 
+  // Calculate parallax effect based on device
+  const getParallaxStyle = (multiplier) => {
+    if (isMobile) {
+      return { y: 0 }; // No parallax on mobile
+    }
+    return { y: scrollY * multiplier };
+  };
+
   return (
     <section className="container pt-24 min-h-[85vh] md:min-h-screen flex flex-col md:flex-row gap-12 items-center max-w-4xl relative overflow-hidden pb-16">
       <motion.div
         className="flex-1 order-2 md:order-1 flex flex-col justify-center"
-        style={{
-          y: scrollY * 0.2, // Parallax effect
-        }}
+        style={getParallaxStyle(0.2)}
       >
         <FloatingElement delay={0.2}>
           <div className="flex items-center gap-3 mb-8">
@@ -146,9 +164,7 @@ export default function HeroSection() {
           delay: 0.2,
           ease: [0.21, 1.11, 0.81, 0.99],
         }}
-        style={{
-          y: scrollY * -0.2, // Inverse parallax effect
-        }}
+        style={getParallaxStyle(-0.2)}
       >
         <Image
           src="/assets/profile-optimized.jpg"
@@ -160,6 +176,48 @@ export default function HeroSection() {
           priority
         />
       </motion.div>
+
+      {/* Social buttons container with fixed positioning on mobile */}
+      <div className="fixed bottom-0 left-0 right-0 bg-gradient-to-t from-white dark:from-gray-900 to-transparent p-4 z-20 md:hidden">
+        <div className="container max-w-4xl mx-auto">
+          <div className="flex justify-center gap-4">
+            <motion.a
+              whileHover={{ scale: 1.1, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              href="https://github.com/spencerwcowles"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors"
+              aria-label="GitHub"
+            >
+              <FaGithub className="h-6 w-6" />
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.1, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              href="https://linkedin.com/in/spencercowles"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors"
+              aria-label="LinkedIn"
+            >
+              <FaLinkedin className="h-6 w-6" />
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.1, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              href="/assets/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 border border-transparent dark:border-gray-700 bg-gray-900 dark:bg-gray-800 text-white rounded-lg py-2 px-4 hover:bg-gray-800 dark:hover:bg-gray-700 dark:hover:border-gray-600 transition-colors"
+              aria-label="Download Resume"
+            >
+              <FaFileDownload className="h-4 w-4" />
+              <span className="hidden sm:inline">Download Resume</span>
+            </motion.a>
+          </div>
+        </div>
+      </div>
 
       {showArrow && (
         <motion.button
