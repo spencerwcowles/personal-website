@@ -1,14 +1,32 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import HeroSection from "../components/HeroSection";
-import Projects from "../components/Projects";
-import Footer from "../components/Footer";
-import AnimatedSection from "../components/AnimatedSection";
-import Experience from "../components/Experience";
-import AlbumCarousel from "../components/AlbumCarousel";
+import Loading from "../components/ui/loading";
+import SectionLoading from "../components/ui/section-loading";
 import { albums } from "../lib/albums";
 import StravaWidget from "../components/StravaWidget";
-import GoalsSection from "../components/GoalsSection";
+import Footer from "../components/Footer";
+
+const Projects = dynamic(() => import("../components/Projects"), {
+  loading: () => <Loading />,
+  ssr: false,
+});
+
+const Experience = dynamic(() => import("../components/Experience"), {
+  loading: () => <SectionLoading />,
+  ssr: false,
+});
+
+const GoalsSection = dynamic(() => import("../components/GoalsSection"), {
+  loading: () => <SectionLoading />,
+  ssr: false,
+});
+
+const AlbumCarousel = dynamic(() => import("../components/AlbumCarousel"), {
+  loading: () => <SectionLoading />,
+  ssr: false,
+});
 
 export default function Home() {
   return (
@@ -25,6 +43,7 @@ export default function Home() {
       <section id="experience" className="container py-16">
         <Experience />
       </section>
+
       <section id="interests" className="container py-16">
         <h2 className="text-4xl font-extrabold mb-12 text-center">
           My Interests
