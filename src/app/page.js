@@ -33,11 +33,11 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <ParallaxBackground />
-      <div id="header">
+      <div id="header" className="relative z-10">
         <HeroSection />
       </div>
 
-      <section id="projects" className="container py-16">
+      <section id="projects" className="container py-16 relative z-0">
         <h2 className="text-4xl font-extrabold mb-12 text-center">Projects</h2>
         <Projects />
       </section>

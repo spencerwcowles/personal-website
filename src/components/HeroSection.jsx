@@ -1,7 +1,13 @@
 import Image from "next/image";
 import { TextGenerateEffect } from "./ui/text-generate-effect";
 import { useEffect, useState } from "react";
-import { FaChevronDown } from "react-icons/fa";
+import {
+  FaChevronDown,
+  FaGithub,
+  FaLinkedin,
+  FaEnvelope,
+  FaFileDownload,
+} from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const FloatingElement = ({ children, delay = 0, className = "" }) => {
@@ -42,7 +48,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="container pt-24 min-h-[70vh] md:min-h-screen flex flex-col md:flex-row gap-12 items-center max-w-4xl relative overflow-hidden">
+    <section className="container pt-24 min-h-[85vh] md:min-h-screen flex flex-col md:flex-row gap-12 items-center max-w-4xl relative overflow-hidden pb-16">
       <motion.div
         className="flex-1 order-2 md:order-1 flex flex-col justify-center"
         style={{
@@ -80,60 +86,53 @@ export default function HeroSection() {
         </FloatingElement>
 
         <FloatingElement delay={0.8}>
-          <div className="flex flex-wrap items-center gap-6">
-            <motion.a
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              href="https://github.com/spencerwcowles"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="link text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors"
-            >
-              GitHub
-            </motion.a>
-            <motion.a
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              href="https://linkedin.com/in/spencercowles"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="link text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors"
-            >
-              LinkedIn
-            </motion.a>
+          <div className="flex flex-col gap-6">
             <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               href="mailto:spencerwcowles@gmail.com"
-              className="link"
+              className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg py-3 px-6 text-lg font-semibold transition-colors shadow-lg hover:shadow-xl"
             >
-              Email
+              <FaEnvelope className="h-5 w-5" />
+              Contact Me
             </motion.a>
-            <motion.a
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-              href="/assets/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 border border-transparent dark:border-gray-700 bg-gray-900 dark:bg-gray-800 text-white rounded-lg py-1 px-3 hover:bg-gray-800 dark:hover:bg-gray-700 dark:hover:border-gray-600 transition-colors"
-            >
-              Download Resume
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
+
+            <div className="flex items-center gap-4">
+              <motion.a
+                whileHover={{ scale: 1.1, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                href="https://github.com/spencerwcowles"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors"
+                aria-label="GitHub"
               >
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                <polyline points="7 10 12 15 17 10" />
-                <line x1="12" y1="15" x2="12" y2="3" />
-              </svg>
-            </motion.a>
+                <FaGithub className="h-6 w-6" />
+              </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.1, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                href="https://linkedin.com/in/spencercowles"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors"
+                aria-label="LinkedIn"
+              >
+                <FaLinkedin className="h-6 w-6" />
+              </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.1, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                href="/assets/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 border border-transparent dark:border-gray-700 bg-gray-900 dark:bg-gray-800 text-white rounded-lg py-2 px-4 hover:bg-gray-800 dark:hover:bg-gray-700 dark:hover:border-gray-600 transition-colors"
+                aria-label="Download Resume"
+              >
+                <FaFileDownload className="h-4 w-4" />
+                Download Resume
+              </motion.a>
+            </div>
           </div>
         </FloatingElement>
       </motion.div>
