@@ -46,7 +46,7 @@ export default function Navbar() {
         window.innerHeight + window.scrollY >= documentHeight - 200;
 
       if (isNearBottom) {
-        setCurrentSection("Experience");
+        setCurrentSection("Interests");
         return;
       }
 
