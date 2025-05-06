@@ -36,6 +36,9 @@ export default function Footer() {
           <p className="text-sm text-gray-500 dark:text-gray-400">
             © {new Date().getFullYear()} spencercowles.com
           </p>
+          <p className="text-sm text-gray-400 italic mt-2">
+            Last updated May 2025
+          </p>
         </div>
       </div>
     </footer>
