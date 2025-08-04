@@ -167,12 +167,12 @@ export default function HeroSection() {
         style={getParallaxStyle(-0.2)}
       >
         <Image
-          src="/assets/profile-optimized.jpg"
+          src="/assets/new-profile-picture.jpg"
           alt="Spencer Cowles"
           fill
           sizes="(max-width: 768px) 256px, 256px"
           quality={95}
-          style={{ objectFit: "cover" }}
+          style={{ objectFit: "cover", objectPosition: "center 35%" }}
           priority
         />
       </motion.div>
