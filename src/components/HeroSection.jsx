@@ -84,7 +84,7 @@ export default function HeroSection() {
 
         <FloatingElement delay={0.4}>
           <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
-            I'm a second-year at <strong>UC San Diego</strong>, majoring in{" "}
+            I'm a third-year at <strong>UC San Diego</strong>, majoring in{" "}
             <strong>Mathematics</strong> and <strong>Computer Science</strong>{" "}
             and minoring in <strong>Economics</strong>. As an active member of{" "}
             <i>Triton Unmanned Aerial Systems</i> (TUAS) and{" "}
@@ -141,7 +141,7 @@ export default function HeroSection() {
               <motion.a
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                href="/assets/resume.pdf"
+                href="/assets/Spencer_Cowles_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 border border-transparent dark:border-gray-700 bg-gray-900 dark:bg-gray-800 text-white rounded-lg py-2 px-4 hover:bg-gray-800 dark:hover:bg-gray-700 dark:hover:border-gray-600 transition-colors"
