@@ -1,5 +1,22 @@
 [
   {
+    "title": "barraCUA",
+    "summary": "Winner at SB Hacks 2026 for building an AI-powered, agent-driven accessibility tool",
+    "description": "Developed a multimodal Chrome extension that can visually interpret webpages, answer contextual questions, and perform browser actions using Google Gemini for screen understanding and agentic decision-making. Engineered a real-time voice and automation pipeline using Deepgram (STT/TTS) and a Python + Playwright backend over WebSockets, enabling low-latency interaction and autonomous control of authenticated user sessions. Winner at SB Hacks 2026 for building an AI-powered, agent-driven accessibility tool that understands on-screen content and takes actions on behalf of users, enabling conversational web navigation.",
+    "tags": [
+      "JavaScript",
+      "Python",
+      "Chrome Extensions (MV3)",
+      "Google Gemini",
+      "Deepgram",
+      "Playwright"
+    ],
+    "github": "",
+    "live": "",
+    "year": 2026,
+    "image": "/assets/barracua.jpg"
+  },
+  {
     "title": "Not Red Shirt",
     "summary": "DiamondHacks 2025 Winner of 2 Categories: Best E-commerce Product and Best Use of MongoDB Atlas",
     "description": "Engineered a full-stack semantic search engine for e-commerce that processes natural language queries with negations (e.g., 'not red shirt') to optimize product discovery and elevate the user experience. Processed 1.4M Amazon listings and filtered 260K clothing items; leveraged LangChain to generate vector embeddings and created 1536-dimensional vectors to power advanced semantic search from our vector database. Integrated multi-input search capabilities including text, voice, and image to deliver a multimodal, accessible, and visually engaging frontend with React and Tailwind CSS. Showcased creative problem-solving, technical excellence, and a sleek, modern interface.",

@@ -25,16 +25,16 @@ type Goal = QuantityGoal | TimelineGoal;
 const goals: Goal[] = [
   {
     type: "timeline",
-    name: "Half Marathon",
+    name: "Yosemite Half Marathon",
     emoji: "🏃‍♂️",
     color: "from-blue-500 to-blue-600",
-    startDate: "2025-04-01",
-    endDate: "2025-10-04",
+    startDate: "2025-01-01",
+    endDate: "2026-03-15",
   },
   {
     type: "quantity",
     name: "Reading Goal",
-    current: 2,
+    current: 2, 
     target: 10,
     emoji: "📚",
     color: "from-purple-500 to-purple-600",
@@ -50,7 +50,7 @@ const goals: Goal[] = [
   {
     type: "quantity",
     name: "Hackathon Wins",
-    current: 1,
+    current: 2,
     target: 3,
     emoji: "🏆",
     color: "from-green-500 to-green-600",

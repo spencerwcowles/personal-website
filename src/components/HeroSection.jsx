@@ -87,10 +87,11 @@ export default function HeroSection() {
             I'm a third-year at <strong>UC San Diego</strong>, majoring in{" "}
             <strong>Mathematics</strong> and <strong>Computer Science</strong>{" "}
             and minoring in <strong>Economics</strong>. As an active member of{" "}
-            <i>Triton Unmanned Aerial Systems</i> (TUAS) and{" "}
             <i>Triton Consulting Group</i> (TCG), I collaborate with fellow
             students to deliver real-world projects while gaining hands-on
             experience in full-stack development and technical consulting.
+            I previously interned at <strong>BusinessRate</strong> where I worked across the 
+            stack to enhance their internal tools and customer-facing website.
           </p>
         </FloatingElement>
 

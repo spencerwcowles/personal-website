@@ -5,12 +5,20 @@ import { motion } from "framer-motion";
 
 const experiences = [
   {
-    title: "Backend Developer",
-    company: "KlonIt.AI",
-    url: "https://klonit.ai/",
-    date: "Mar. 2025 – Present",
+    title: "Full Stack Intern",
+    company: "BusinessRate",
+    url: "https://businessrate.com/",
+    date: "Jun. 2025 – Present",
     description:
-      "Built MCP-based SQL Server connector for LLM tools like Claude Desktop. Developed local testing infrastructure and led GitHub-driven agile workflows.",
+      "Led development of full-stack Next.js/React application, achieving 30% increase in organic traffic. Designed RESTful APIs and PostgreSQL queries with Kysely ORM, indexing 28M+ businesses. Optimized performance using AWS Amplify, decreasing page load times by up to 80%.",
+  },
+  {
+    title: "Software Engineering Intern",
+    company: "KlonitAI",
+    url: "https://klonit.ai/",
+    date: "Mar. 2025 – Jun. 2025",
+    description:
+      "Engineered production-ready SQL Connector for Model Context Protocol (MCP), enabling seamless LLM access to live PostgreSQL data. Achieved 100% test coverage and reduced query latency by 45%, enabling access to 25,000+ records.",
   },
   {
     title: "Associate/Software Developer",

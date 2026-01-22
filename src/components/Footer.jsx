@@ -37,7 +37,7 @@ export default function Footer() {
             © {new Date().getFullYear()} spencercowles.com
           </p>
           <p className="text-sm text-gray-400 italic mt-2">
-            Last updated May 2025
+            Last updated January 2026
           </p>
         </div>
       </div>
